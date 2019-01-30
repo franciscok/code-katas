@@ -1,0 +1,57 @@
+{
+  "name": "tdd-katas",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "none"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "build": ":",
+    "test": "xo 'src/**/*.js' && jest --coverage",
+    "watch": "jest --watch",
+    "release": ":"
+  },
+  "dependencies": {
+    "lodash": ">=4.17.5"
+  },
+  "devDependencies": {
+    "jest": "23.x.x",
+    "xo": "0.21.x"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/"
+    ],
+    "resetMocks": true,
+    "resetModules": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  },
+  "xo": {
+    "space": true,
+    "env": [
+      "node",
+      "jest"
+    ],
+    "rules": {
+      "unicorn/filename-case": 0,
+      "arrow-parens": [
+        2,
+        "always"
+      ],
+      "object-curly-spacing": [
+        2,
+        "always"
+      ]
+    }
+  }
+}
