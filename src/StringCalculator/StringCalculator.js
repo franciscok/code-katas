@@ -1,23 +1,31 @@
 class StringCalculator {
   add(numbersString) {
-    let values;
 
     if (!numbersString) {
       return 0;
     }
+    let values;
 
-    if (numbersString.indexOf(',') > -1){
-      values = numbersString.split(',');
-    } else if (numbersString.indexOf('\n') > -1){
-      values = numbersString.split('\n');
+    if (numbersString.length > 0){
+      let cleanValues = this.replacePattern(numbersString);
+      values = cleanValues.split(',');
     } else {
       return parseInt(numbersString);
     }
 
-    const sum = parseInt(values[0])  + parseInt(values[1]);
+    let sum = 0;
+    values.forEach((val) => {
+      sum+= parseInt(val);
+    });
     
     return sum;
   }
+
+  replacePattern(numberString) {
+    return numberString.replace(/[^\d]/g, ",");
+  }
+
+
 }
 
 module.exports = {
