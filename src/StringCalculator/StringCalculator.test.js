@@ -7,5 +7,11 @@ describe('StringCalculator', () => {
     it('zero for empty string ', () => {
       expect(uut.add('')).toEqual(0);
     });
+    it('single number returns the value', () => {
+      expect(uut.add('1')).toEqual(1);
+    })
+    it('Two numbers, comma delimited, returns the sum',()=>{
+      expect(uut.add('1,2')).toEqual(3);
+    });
   });
 });
