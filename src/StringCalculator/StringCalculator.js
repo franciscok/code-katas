@@ -1,18 +1,22 @@
 class StringCalculator {
   add(numbersString) {
+    let values;
+
     if (!numbersString) {
       return 0;
     }
 
-    const values = numbersString.split(',');
-    const sum = parseInt(values[0])  + parseInt(values[1]);
-
-
-    if(values.length > 1){
-      return sum;
+    if (numbersString.indexOf(',') > -1){
+      values = numbersString.split(',');
+    } else if (numbersString.indexOf('\n') > -1){
+      values = numbersString.split('\n');
+    } else {
+      return parseInt(numbersString);
     }
 
-    return parseInt(numbersString);
+    const sum = parseInt(values[0])  + parseInt(values[1]);
+    
+    return sum;
   }
 }
 

@@ -13,5 +13,8 @@ describe('StringCalculator', () => {
     it('Two numbers, comma delimited, returns the sum',()=>{
       expect(uut.add('1,2')).toEqual(3);
     });
+    it('Two numbers, newline delimited, returns the sum',()=>{
+      expect(uut.add('1\n2')).toEqual(3);
+    });
   });
 });
