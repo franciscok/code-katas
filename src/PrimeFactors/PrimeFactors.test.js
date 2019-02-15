@@ -5,5 +5,5 @@ describe('PrimeFactors', () => {
     it('transformation: null to constant', () => {
       expect(PrimeFactors.generate(1)).toEqual([]);
     });
-
+  })
 });
