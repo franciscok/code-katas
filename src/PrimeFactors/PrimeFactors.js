@@ -3,13 +3,12 @@
  * @returns {Array<int>} prime factors
  */
 function generate(number) {
-  const factors = [];
-
-
-  if (number / 2 === 1 || number / 2 === 1.5) {
-    factors.push(number);
+  let factors = [];
+  for (let candidate = 2; number > 1; candidate++) {
+    for (; number % candidate === 0; number /= candidate) {
+      factors.push(candidate);
+    }
   }
-
   return factors;
 }
 
