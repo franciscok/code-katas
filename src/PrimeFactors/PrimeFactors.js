@@ -6,14 +6,9 @@ function generate(number) {
   const factors = [];
 
 
-  if (number / 2 === 1) {
+  if (number / 2 === 1 || number / 2 === 1.5) {
     factors.push(number);
   }
-
-  if (number / 3 === 1) {
-    factors.push(number);
-  }
-
 
   return factors;
 }
