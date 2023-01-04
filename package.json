@@ -17,7 +17,7 @@
     "lodash": ">=4.17.21"
   },
   "devDependencies": {
-    "jest": "23.x.x",
+    "jest": "29.x.x",
     "xo": "0.21.x"
   },
   "jest": {
